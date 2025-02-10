@@ -1,9 +1,7 @@
 import React, { useEffect } from "react";
 
 const Banner = ({ gameBanner }) => {
-  useEffect(() => {
-    console.log("game banner", gameBanner);
-  }, [gameBanner]);
+  useEffect(() => {}, [gameBanner]);
   return (
     <div className="relative">
       <div className="absolute bottom-0 p-5 bg-gradient-to-t from-slate-900 to-transparent w-full">

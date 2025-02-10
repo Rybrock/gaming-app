@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Api from "../services/Api";
-import { Fragment } from "react";
 
-function GenreList() {
+function GenreList({ genreId, selectedGenreName }) {
   const [genreList, setGenreList] = useState([]);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -31,7 +30,11 @@ function GenreList() {
             className={`group genre-item flex items-center gap-2 mb-2 cursor-pointer hover:bg-gray-300 rounded-lg p-2 hover:dark:bg-gray-600 ${
               activeIndex === index ? "bg-gray-300 dark:bg-gray-600" : null
             }`}
-            onClick={() => setActiveIndex(index)}
+            onClick={() => {
+              setActiveIndex(index);
+              genreId(genre.id);
+              selectedGenreName(genre.name);
+            }}
           >
             {genre.image_background && (
               <img
