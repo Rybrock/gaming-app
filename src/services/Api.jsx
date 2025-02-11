@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const key = "d92872cf68c54fc8b2d27ae78e86d994";
+const key = "b5d523a75dce4411ae5fd7d8dd15941e";
 const axiosCreate = axios.create({
   baseURL: "https://api.rawg.io/api",
 });
@@ -16,8 +16,12 @@ const getGames = () => {
 const getGamesListByGenresId = (id) =>
   axiosCreate.get("/games?key=" + key + "&genres=" + id);
 
+const searchGames = (query) =>
+  axiosCreate.get(`/games?search=${query}&key=${key}`);
+
 export default {
   getGenres,
   getGames,
   getGamesListByGenresId,
+  searchGames,
 };

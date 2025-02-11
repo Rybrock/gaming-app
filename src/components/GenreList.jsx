@@ -12,7 +12,6 @@ function GenreList({ genreId, selectedGenreName }) {
   const getGenreList = () => {
     Api.getGenres()
       .then((response) => {
-        // console.log(response.data.results);
         setGenreList(response.data.results);
       })
       .catch((error) => {

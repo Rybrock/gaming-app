@@ -11,8 +11,9 @@ const GamesByGenresId = ({ gamesList, selectedGenreName }) => {
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3
     gap-6 mt-5"
       >
-        {gamesList.map((game) => (
+        {gamesList.map((game, index) => (
           <div
+            key={index}
             className="bg-[#76a8f75e] 
             p-3 rounded-lg pb-12 h-full
             hover:scale-110 transition-all ease-in-out duration-300
